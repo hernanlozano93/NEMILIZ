@@ -31,6 +31,18 @@ lib.ssMetadata = [];
 p.nominalBounds = new cjs.Rectangle(0,0,1134,397);
 
 
+(lib.CelebracionPeruFondo = function() {
+	this.initialize(img.CelebracionPeruFondo);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,4546,3197);
+
+
+(lib.CelebracionPeruTitulo = function() {
+	this.initialize(img.CelebracionPeruTitulo);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,2788,1153);
+
+
 (lib.Chica = function() {
 	this.initialize(img.Chica);
 }).prototype = p = new cjs.Bitmap();
@@ -2243,6 +2255,46 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = getMCSymbolPrototype(lib.Avion, new cjs.Rectangle(0,0,352.2,199), null);
+
+
+(lib.mc_peru = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Botones
+	this.boton6 = new lib.boton6();
+	this.boton6.name = "boton6";
+	this.boton6.setTransform(1223.95,251.5,0.8089,0.8089);
+	new cjs.ButtonHelper(this.boton6, 0, 1, 2, false, new lib.boton6(), 3);
+
+	this.timeline.addTween(cjs.Tween.get(this.boton6).wait(1));
+
+	// Titulo
+	this.instance = new lib.CelebracionPeruTitulo();
+	this.instance.setTransform(148,15,0.256,0.256);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+	// Fondo
+	this.instance_1 = new lib.CelebracionPeruFondo();
+	this.instance_1.setTransform(0,0,0.2397,0.2402);
+
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#FFFFFF").ss(1,1,1).p("ECvYiPPIAAuLQAAh8BYhYQBYhYB8AAMBkBAAAQB8AABYBYQBYBYAAB8IAAOLECp8BdbIAAQCEikDBTEMh0BAAAQh8AAhYhYQhYhYAAh8MAAAjsuQAAh8BYhYQBYhYB8AAMDRZAAAQB8AABYBYQBYBYAAB8IAAPHEB8eCjDMiToAAAQh8AAhYhYQhYhYAAh8MAAAgpX");
+	this.shape.setTransform(66.425,500.4);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance_1}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.mc_peru, new cjs.Rectangle(-1757,-544.1,3646.9,2089), null);
 
 
 (lib.mc_escenario6 = function(mode,startPosition,loop,reversed) {
@@ -4623,6 +4675,13 @@ if (reversed == null) { reversed = false; }
 			bn=3;
 			return bn;
 		}
+		
+		this.botonpais5.on("click", valor5.bind(this));
+		
+		function valor5(){
+			bn=5;
+			return bn;
+		}
 		this.boton6.addEventListener("click", abrir);
 		
 		function abrir() {
@@ -4640,6 +4699,8 @@ if (reversed == null) { reversed = false; }
 			this.parent.cambiarEscenario(new lib.mc_escenario1(),1);
 		} else if (bn == 3){
 			this.parent.cambiarEscenario(new lib.mc_escenario6(),1);
+		} else if (bn == 5){
+			this.parent.cambiarEscenario(new lib.mc_peru(),1);
 		}
 	}
 
@@ -4822,19 +4883,21 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/avion.png?1629365601891", id:"avion"},
-		{src:"images/Chica.png?1629365601891", id:"Chica"},
-		{src:"images/Chico.png?1629365601891", id:"Chico"},
-		{src:"images/Fondo1.png?1629365601891", id:"Fondo1"},
-		{src:"images/Fondo2.png?1629365601891", id:"Fondo2"},
-		{src:"images/Fondo3.png?1629365601891", id:"Fondo3"},
-		{src:"images/Fondo4.png?1629365601891", id:"Fondo4"},
-		{src:"images/Fondo5.png?1629365601891", id:"Fondo5"},
-		{src:"images/FondoPersonaje.png?1629365601891", id:"FondoPersonaje"},
-		{src:"images/Intro1366768.png?1629365601891", id:"Intro1366768"},
-		{src:"images/Intro21366768.png?1629365601891", id:"Intro21366768"},
-		{src:"images/IntroTitulo1366768.png?1629365601891", id:"IntroTitulo1366768"},
-		{src:"images/TextosInicial2.png?1629365601891", id:"TextosInicial2"}
+		{src:"images/avion.png?1629398671543", id:"avion"},
+		{src:"images/CelebracionPeruFondo.png?1629398671543", id:"CelebracionPeruFondo"},
+		{src:"images/CelebracionPeruTitulo.png?1629398671543", id:"CelebracionPeruTitulo"},
+		{src:"images/Chica.png?1629398671543", id:"Chica"},
+		{src:"images/Chico.png?1629398671543", id:"Chico"},
+		{src:"images/Fondo1.png?1629398671543", id:"Fondo1"},
+		{src:"images/Fondo2.png?1629398671543", id:"Fondo2"},
+		{src:"images/Fondo3.png?1629398671543", id:"Fondo3"},
+		{src:"images/Fondo4.png?1629398671543", id:"Fondo4"},
+		{src:"images/Fondo5.png?1629398671543", id:"Fondo5"},
+		{src:"images/FondoPersonaje.png?1629398671543", id:"FondoPersonaje"},
+		{src:"images/Intro1366768.png?1629398671543", id:"Intro1366768"},
+		{src:"images/Intro21366768.png?1629398671543", id:"Intro21366768"},
+		{src:"images/IntroTitulo1366768.png?1629398671543", id:"IntroTitulo1366768"},
+		{src:"images/TextosInicial2.png?1629398671543", id:"TextosInicial2"}
 	],
 	preloads: []
 };
